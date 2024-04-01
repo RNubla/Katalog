@@ -5,6 +5,7 @@ import { ThemeProvider } from "@mui/material";
 // Import the generated route tree
 import { routeTree } from "./routeTree.gen";
 import theme from "./components/theme";
+import "./index.css";
 
 // Create a new router instance
 const router = createRouter({ routeTree });
