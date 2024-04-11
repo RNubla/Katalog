@@ -15,14 +15,14 @@ function Index({
 		// <div className="h-full">Hi</div>
 		<PanelGroup
 			autoSaveId="persistence"
-			className="flex flex-col"
+			className="flex-1"
 			direction="horizontal"
 			onLayout={onLayout}
 		>
-			<Panel defaultSize={defaultLayout[0]} minSize={20}>
+			<Panel defaultSize={defaultLayout[0]} minSize={20} className="flex">
 				<h3>Welcome Home!</h3>
 			</Panel>
-			<PanelResizeHandle className="w-2 bg-blue-800" />
+			<PanelResizeHandle className="w-2 bg-blue-200" />
 			<Panel defaultSize={defaultLayout[1]} minSize={20}>
 				<h3>Main content</h3>
 			</Panel>

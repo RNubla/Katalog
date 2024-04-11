@@ -15,9 +15,7 @@ export const Route = createRootRoute({
 				</Link>
 			</nav>
 			<hr />
-			<div className="flex-grow">
-				<Outlet />
-			</div>
+			<Outlet />
 			<TanStackRouterDevtools />
 		</div>
 	),
