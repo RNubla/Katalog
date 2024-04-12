@@ -89,6 +89,7 @@ pub fn run() {
     tauri::Builder::default()
         .setup(|app| {
             let menu = MenuBuilder::new(app).copy().undo().build()?;
+            app.set_menu(menu)?;
             Ok(())
         })
         .plugin(tauri_plugin_os::init())
