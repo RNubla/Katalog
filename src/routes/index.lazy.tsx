@@ -1,7 +1,7 @@
 import { Button } from "@nextui-org/react";
 import { createLazyFileRoute } from "@tanstack/react-router";
 import { Panel, PanelGroup, PanelResizeHandle } from "react-resizable-panels";
-import { open } from "@tauri-apps/plugin-dialog";
+import FoldersPanel from "../components/FoldersPanel";
 export const Route = createLazyFileRoute("/")({
 	component: Index,
 });
@@ -13,18 +13,6 @@ function Index({
 		document.cookie = `react-resizable-panels:layout=${JSON.stringify(sizes)}`;
 	};
 
-	const openFolder = async () => {
-		await open({
-			multiple: true,
-			filters: [
-				{
-					name: "Image",
-					extensions: ["png", "jpeg"],
-				},
-			],
-		});
-	};
-
 	return (
 		// <div className="h-full">Hi</div>
 		<PanelGroup
@@ -33,8 +21,14 @@ function Index({
 			direction="horizontal"
 			onLayout={onLayout}
 		>
-			<Panel defaultSize={defaultLayout[0]} minSize={20} className="flex">
-				<Button onClick={openFolder}>Open folder</Button>
+			<Panel
+				defaultSize={defaultLayout[0]}
+				minSize={15}
+				maxSize={30}
+				className="flex"
+			>
+				<FoldersPanel />
+				{/* <Button onClick={openFolder}>Open folder</Button> */}
 			</Panel>
 			<PanelResizeHandle className="w-2 bg-blue-200" />
 			<Panel defaultSize={defaultLayout[1]} minSize={20}>
