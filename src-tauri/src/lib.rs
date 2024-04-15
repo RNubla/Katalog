@@ -87,11 +87,11 @@ fn greet(name: &str) -> String {
 pub fn run() {
     // let menu = create_main_menu();
     tauri::Builder::default()
-        .setup(|app| {
-            let menu = MenuBuilder::new(app).copy().undo().build()?;
-            app.set_menu(menu)?;
-            Ok(())
-        })
+        // .setup(|app| {
+        //     let menu = MenuBuilder::new(app).copy().undo().build()?;
+        //     app.set_menu(menu)?;
+        //     Ok(())
+        // })
         .plugin(tauri_plugin_os::init())
         // .menu(menu)
         // .on_menu_event(|event| {

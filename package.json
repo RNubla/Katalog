@@ -13,6 +13,7 @@
     "@nextui-org/react": "^2.2.10",
     "@tanstack/react-router": "^1.26.1",
     "@tauri-apps/api": "^1.5.3",
+    "@tauri-apps/plugin-dialog": "^2.0.0-beta.2",
     "framer-motion": "^11.0.25",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

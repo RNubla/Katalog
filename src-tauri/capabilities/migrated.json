@@ -31,6 +31,8 @@
     "os:allow-locale",
     "os:allow-hostname",
     "os:default",
-    "fs:default"
+    "fs:default",
+    "dialog:default",
+    "dialog:allow-open"
   ]
 }
