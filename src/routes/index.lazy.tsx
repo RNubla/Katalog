@@ -24,7 +24,7 @@ function Index({
 			<Panel
 				defaultSize={defaultLayout[0]}
 				minSize={15}
-				maxSize={30}
+				maxSize={20}
 				className="flex"
 			>
 				<FoldersPanel />

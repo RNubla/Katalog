@@ -1,6 +1,5 @@
-import React from "react";
 import { ListboxWrapper } from "./Wrapers/ListBoxWrapper";
-import { Listbox, ListboxItem, cn } from "@nextui-org/react";
+import { Listbox, ListboxItem } from "@nextui-org/react";
 import { open } from "@tauri-apps/plugin-dialog";
 
 const FoldersPanel = () => {
@@ -23,6 +22,7 @@ const FoldersPanel = () => {
 					key="delete"
 					className="text-primary"
 					color="secondary"
+					showDivider
 					onClick={openFolder}
 					// startContent={
 					// 	<DeleteDocumentIcon className={cn(iconClasses, "text-danger")} />
@@ -44,7 +44,7 @@ const FoldersPanel = () => {
 				</ListboxItem>
 				<ListboxItem
 					key="edit"
-					showDivider
+					// showDivider
 					// startContent={<EditDocumentIcon className={iconClasses} />}
 				>
 					Edit file
