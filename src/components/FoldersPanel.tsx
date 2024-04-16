@@ -1,10 +1,13 @@
 import { ListboxWrapper } from "./Wrapers/ListBoxWrapper";
 import { Listbox, ListboxItem } from "@nextui-org/react";
 import { open } from "@tauri-apps/plugin-dialog";
+import { useState } from "react";
+import { basename } from "@tauri-apps/api/path";
 
 const FoldersPanel = () => {
+	const [directories, setDirectories] = useState<Record<string, string>[]>([]);
 	const openFolder = async () => {
-		await open({
+		const folder = await open({
 			multiple: false,
 			directory: true,
 			filters: [
@@ -13,8 +16,17 @@ const FoldersPanel = () => {
 					extensions: ["png", "jpeg"],
 				},
 			],
-		}).then((res) => console.log(res));
+		});
+		if (folder) {
+			const baseNameFolder = await basename(folder);
+			setDirectories((prevValues) => ({
+				...prevValues,
+				[folder]: baseNameFolder,
+			}));
+		}
 	};
+
+	console.log(directories);
 	return (
 		<ListboxWrapper>
 			<Listbox variant="faded" aria-label="Listbox menu with icons">
